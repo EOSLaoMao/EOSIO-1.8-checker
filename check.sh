@@ -1,3 +1,5 @@
+#!/bin/bash
+
 HOST=${1:-0.0.0.0}
 PORT=${2:-8888}
 CORRECT_HASH=7bf1979ced70ff367d42a21eead92c82e645f802de327fdabea0ca24f8365b3a
