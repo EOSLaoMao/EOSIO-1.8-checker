@@ -1,8 +1,9 @@
 #!/bin/bash
 
-HOST=${1:-0.0.0.0}
+HOST=${1:-127.0.0.1}
 PORT=${2:-8888}
 CORRECT_HASH=7bf1979ced70ff367d42a21eead92c82e645f802de327fdabea0ca24f8365b3a
+ACTIVATION_TIME=2019-09-23T13:00:00.000
 NUM_PASS=0
 GREEN_PREFIX="\033[32;1m"
 RED_PREFIX="\033[31;1m"
@@ -34,6 +35,10 @@ else
     echo -e "$RED_PREFIX FAIL!! Protocal Features Hash Check Failed!$SUFFIX"
     echo -e "Correct hash is: $GREEN_PREFIX $CORRECT_HASH $SUFFIX"
     echo -e "Your hash is:    $RED_PREFIX $hash $SUFFIX"
+    echo
+    echo -e " Verify the following:"
+    echo -e "  1) earliest_allowed_activation_time is set to $GREEN_PREFIX$ACTIVATION_TIME$SUFFIX in BUILTIN-PREACTIVATE_FEATURE.json"
+    echo -e "  2)$GREEN_PREFIX producer_api_plugin$SUFFIX is enabled"
 fi
 
 echo
@@ -41,5 +46,5 @@ if [ $NUM_PASS == 2 ]
 then
     echo -e "$GREEN_PREFIX Result: You have passed all checks, good to go!$SUFFIX"
 else
-    echo -e "$RED_PREFIX Result: You have failed one or more checks, please fix it asap!$SUFFIX"
+    echo -e "$RED_PREFIX Result: You have failed one or more checks, please fix it and try again!$SUFFIX"
 fi
