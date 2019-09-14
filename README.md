@@ -7,7 +7,7 @@ This script is used for EOS Block Producers to check if their producing node is 
 
 This script checks two things, nodeos version and protocal feature hash.
 
-Valid nodeos version should be `v1.8.1` OR `v1.8.2`.
+Valid nodeos version should be `v1.8.1`, `v1.8.2`, or `v1.8.3`.
 
 Valid protocal feature hash should be `7bf1979ced70ff367d42a21eead92c82e645f802de327fdabea0ca24f8365b3a`, you can double check it using(change `$PORT` and `$HOST` accordingly):
 

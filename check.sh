@@ -12,13 +12,13 @@ SUFFIX="\033[0m"
 echo
 echo "(1/2) Checking nodeos Version..."
 v=`nodeos -v | awk '{split($0, v, "-"); print v[1]}'`
-if [ "$v" == "v1.8.1" ] || [ "$v" == "v1.8.2" ];
+if [ "$v" == "v1.8.1" ] || [ "$v" == "v1.8.2" ] || [ "$v" == "v1.8.3" ];
 then
     echo -e "$GREEN_PREFIX PASS:) nodeos Version Check Passed!$SUFFIX"
     NUM_PASS=$((NUM_PASS + 1))
 else
     echo -e "$RED_PREFIX FAIL!! nodeos Version Check Failed!$SUFFIX"
-    echo -e "Correct Version is: $GREEN_PREFIX v1.8.1 $SUFFIX OR $GREEN_PREFIX v1.8.2$SUFFIX"
+    echo -e "Correct Version is: $GREEN_PREFIX v1.8.1 $SUFFIX , $GREEN_PREFIX v1.8.2$SUFFIX OR $GREEN_PREFIX v1.8.3$SUFFIX"
     echo -e "Your Version is:    $RED_PREFIX $v $SUFFIX"
 fi
 
